@@ -3,7 +3,7 @@ jobs:
   build-and-test:
     macos:
       xcode: "10.2.0"
-    working_directory: /Users/yanglei/CircleCITestDemo
+    working_directory: /Users/distiller/project
     environment:
       FL_OUTPUT_DIR: output
       FASTLANE_LANE: test
@@ -22,7 +22,7 @@ jobs:
   adhoc:
     macos:
       xcode: "10.2.0"
-    working_directory: /Users/yanglei/CircleCITestDemo
+    working_directory: /Users/distiller/project
     environment:
       FL_OUTPUT_DIR: output
       FASTLANE_LANE: adhoc
@@ -34,12 +34,12 @@ jobs:
           name: Fastlane
           command: bundle exec fastlane $FASTLANE_LANE
       - store_artifacts:
-          path: output/CircleCITestDemo.ipa
+          path: output/Game.ipa
 
   beta:
     macos:
       xcode: "10.2.0"
-    working_directory: /Users/yanglei/CircleCITestDemo
+    working_directory: /Users/distiller/project
     environment:
       FL_OUTPUT_DIR: output
       FASTLANE_LANE: beta
@@ -51,7 +51,7 @@ jobs:
           name: Fastlane
           command: bundle exec fastlane $FASTLANE_LANE
       - store_artifacts:
-          path: output/CircleCITestDemo.ipa
+          path: output/Game.ipa
 
 workflows:
   version: 2
